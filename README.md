@@ -73,3 +73,9 @@ pingbot delete my-job-id
 ## Tech stack
 
 Python, FastAPI, SQLite, httpx, Typer, Rich
+
+## More tools
+
+- [envyzer](https://github.com/shyh26/envyzer) — .env file validator and diff tool
+- [shipnotes](https://github.com/shyh26/shipnotes) — changelog generator from git history
+- [tokenalyzer](https://github.com/shyh26/tokenalyzer) — AI coding token usage & cost analyzer
