@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pingbot - Cron Job Monitor</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  header {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  h1 { font-size: 48px; color: #58a6ff; margin-bottom: 16px; }
+  .tagline { font-size: 20px; color: #8b949e; margin-bottom: 32px; }
+  .btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: #238636;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: #2ea043; }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid #30363d;
+    margin-left: 12px;
+  }
+  .btn-outline:hover { background: #161b22; }
+  section { padding: 60px 0; border-top: 1px solid #21262d; }
+  h2 { font-size: 28px; color: #f0f6fc; margin-bottom: 16px; }
+  p { color: #8b949e; margin-bottom: 16px; }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .feature {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .feature h3 { color: #58a6ff; margin-bottom: 8px; font-size: 16px; }
+  .feature p { color: #8b949e; font-size: 14px; margin: 0; }
+  .code {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 20px 24px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    color: #c9d1d9;
+    overflow-x: auto;
+    margin: 16px 0;
+  }
+  .code .c { color: #8b949e; }
+  .code .k { color: #ff7b72; }
+  .pricing {
+    text-align: center;
+    padding: 60px 0;
+  }
+  .price-card {
+    display: inline-block;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 32px 48px;
+  }
+  .price { font-size: 48px; color: #f0f6fc; font-weight: 700; }
+  .price span { font-size: 16px; color: #8b949e; }
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #484f58;
+    font-size: 14px;
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 32px; }
+    .features { grid-template-columns: 1fr; }
+    .btn-outline { margin-left: 0; margin-top: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>pingbot</h1>
+    <p class="tagline">Dead-simple cron job monitoring.<br>Get Telegram alerts when your jobs fail to check in.</p>
+    <a href="https://lemonsqueezy.com/checkout/buy/1692933" class="btn">Buy Now - $19</a>
+    <a href="https://github.com/shyh26/pingbot" class="btn btn-outline">View on GitHub</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>How it works</h2>
+    <p>Your cron jobs ping pingbot. If one goes silent, you get a Telegram message. When it recovers, you get another.</p>
+    <div class="code">
+<span class="c"># Your backup script just needs one extra line</span><br>
+<span class="k">curl</span> -X POST https://your-pingbot.example.com/ping/daily-backup
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Telegram Alerts</h3>
+        <p>Get notified instantly when jobs go late or die. Know about failures before your users do.</p>
+      </div>
+      <div class="feature">
+        <h3>Auto-Recovery Notices</h3>
+        <p>Stop wondering if things are still broken. pingbot tells you when a job recovers.</p>
+      </div>
+      <div class="feature">
+        <h3>Simple HTTP API</h3>
+        <p>Any language, any platform. Bash, Python, Go, Rust — just curl an endpoint.</p>
+      </div>
+      <div class="feature">
+        <h3>Zero Dependencies</h3>
+        <p>SQLite backend, no database server needed. Single binary, deploy anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Quick Start</h2>
+    <div class="code">
+pip install pingbot<br>
+pingbot start --token YOUR_BOT_TOKEN<br>
+<br>
+<span class="c"># Register a job</span><br>
+pingbot register --name "Daily Backup" --interval 86400 --grace 3600<br>
+<br>
+<span class="c"># Your cron job pings in</span><br>
+curl -X POST https://your-host/ping/daily-backup
+    </div>
+  </div>
+</section>
+
+<div class="pricing">
+  <div class="container">
+    <h2>One-time purchase</h2>
+    <div class="price-card">
+      <div class="price">$19</div>
+      <p style="margin-top:8px">Lifetime license. Free updates forever.</p>
+      <a href="https://lemonsqueezy.com/checkout/buy/1692933" class="btn" style="margin-top:16px">Buy Now</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Built by <a href="https://github.com/shyh26" style="color:#58a6ff">@shyh26</a>. MIT Licensed.</p>
+  </div>
+</footer>
+
+</body>
+</html>

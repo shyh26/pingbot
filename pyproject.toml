@@ -2,7 +2,24 @@
 name = "pingbot"
 version = "0.1.0"
 description = "Dead-simple cron job monitor with Telegram alerts"
-requires-python = ">=3.14"
+authors = [{ name = "shyh26", email = "shyh26@users.noreply.github.com" }]
+requires-python = ">=3.10"
+keywords = ["cron", "monitoring", "telegram", "devops", "scheduler"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Monitoring",
+    "Topic :: System :: Systems Administration",
+]
 dependencies = [
     "anyio>=4.12.0",
     "httpx>=0.28.1",
@@ -15,6 +32,13 @@ dependencies = [
 [project.scripts]
 pingbot = "cronmon.cli:main"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/cronmon"]
+
 [build-system]
-requires = ["uv_build>=0.9.0"]
-build-backend = "uv_build"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.urls]
+Homepage = "https://shyh26.github.io/pingbot"
+Repository = "https://github.com/shyh26/pingbot"
