@@ -1,0 +1,20 @@
+[project]
+name = "pingbot"
+version = "0.1.0"
+description = "Dead-simple cron job monitor with Telegram alerts"
+requires-python = ">=3.14"
+dependencies = [
+    "anyio>=4.12.0",
+    "httpx>=0.28.1",
+    "msgspec>=0.20.0",
+    "rich>=14.2.0",
+    "typer>=0.21.0",
+    "uvicorn>=0.38.0",
+]
+
+[project.scripts]
+pingbot = "cronmon.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.0"]
+build-backend = "uv_build"
